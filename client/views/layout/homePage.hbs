@@ -1,0 +1,184 @@
+<body>
+    <nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100"
+        id="sectionsNav">
+        <div class="container">
+            <div class="navbar-translate">
+                <a class="navbar-brand" href="/home">
+                    BLACK HOLE </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse">
+
+                <ul class="navbar-nav ml-auto">
+
+                    <li class="dropdown nav-item">
+                        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                            <i class="material-icons">dashboard</i>Mặt hàng
+                        </a>
+                        <div class="dropdown-menu dropdown-with-icons">
+                            <a href="/categories/sport" class="dropdown-item">
+                                Thể thao
+                            </a>
+                            <a href="/categories/fashion" class="dropdown-item">
+                                Thời trang
+                            </a>
+                            <a href="/categories/electronic" class="dropdown-item">
+                                Điện tử
+                            </a>
+                            <a href="/categories/transport" class="dropdown-item">
+                                Phương tiện
+                            </a>
+                            <a href="/categories/book" class="dropdown-item">
+                                Sách
+                            </a>
+                            <a href="/categories/toolkit" class="dropdown-item">
+                                Phụ kiện - thiết bị số
+                            </a>
+                            <a href="/categories/food" class="dropdown-item">
+                                Thực phẩm
+                            </a>
+                            <a href="/categories/lifestyle" class="dropdown-item">
+                                Nhà cửa - đời sống
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cart" onclick="scrollToDownload()">
+                            <i class="material-icons">shopping_cart</i> Giỏ hàng
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/history" onclick="scrollToDownload()">
+                            <i class="material-icons">history
+                            </i> Lịch sử
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/profile" onclick="scrollToDownload()">
+                            <i class="material-icons">person_pin
+                            </i> Trang cá nhân
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/" onclick="scrollToDownload()">
+                            <i class="material-icons">exit_to_app</i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <form class="form-inline ml-auto">
+                            <div class="form-group no-border">
+                                <input type="text" class="form-control" placeholder="Tìm kiếm">
+                            </div>
+                            <button type="submit" class="btn btn-white btn-just-icon btn-round">
+                                <i class="material-icons">search</i>
+                            </button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
+        <div class="carousel-inner">
+            {{#each carousel}}
+            {{#if this.condition}}
+            <div class="carousel-item active">
+                <a href="/product">
+                    <img class="d-block w-100" src={{this.picture}} alt="First slide">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h4>
+                            <h1>{{this.caption}}</h1>
+                        </h4>
+                    </div>
+                </a>
+            </div>
+            {{else}}
+            <div class="carousel-item">
+                <a href="/product">
+                    <img class="d-block w-100" src={{this.picture}} alt="First slide">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h4>
+                            <h1>{{this.caption}}</h1>
+                        </h4>
+                    </div>
+                </a>
+            </div>
+            {{/if}}
+            {{/each}}
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <i class="material-icons">keyboard_arrow_left</i>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <i class="material-icons">keyboard_arrow_right</i>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <div class="main main-raised">
+        <div class="section section-basic">
+            <div class="ui container">
+                <div class="title">
+                    <h2>Các mặt hàng hiện có</h2>
+                </div>
+                <div class="ui link cards centered grid">
+                    {{#each carts}}
+                    <div class="card">
+
+                        <div class="image">
+
+                            <img src={{this.image}}>
+                        </div>
+
+                        <div class="content">
+                            <a href="/product">
+                                <div class="header">{{this.name}}</div>
+                            </a>
+                            <div class="meta">
+                                <a href="/categories/toolkit">{{this.type}}</a>
+                            </div>
+                            <div class="description">
+                                {{this.price}}
+                            </div>
+                        </div>
+                        <div class="extra content">
+
+                            <span>
+                                <i class="cart icon"></i>
+                                Add to cart
+                            </span>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--   Core JS Files   -->
+    <script>
+        $(document).ready(function () {
+            //init DateTimePickers
+            materialKit.initFormExtendedDatetimepickers();
+
+            // Sliders Init
+            materialKit.initSliders();
+        });
+
+
+        function scrollToDownload() {
+            if ($('.section-download').length != 0) {
+                $("html, body").animate({
+                    scrollTop: $('.section-download').offset().top
+                }, 1000);
+            }
+        }
+
+    </script>
+</body>

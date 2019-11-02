@@ -1,0 +1,141 @@
+<body>
+    <nav class="navbar  fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
+        <div class="container">
+            <div class="navbar-translate">
+                <a class="navbar-brand" href="/home">
+                    BLACK HOLE </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse">
+
+                <ul class="navbar-nav ml-auto">
+
+                    <li class="dropdown nav-item">
+                        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                            <i class="material-icons">dashboard</i>Mặt hàng
+                        </a>
+                        <div class="dropdown-menu dropdown-with-icons">
+                            <a href="/categories/sport" class="dropdown-item">
+                                Thể thao
+                            </a>
+                            <a href="/categories/fashion" class="dropdown-item">
+                                Thời trang
+                            </a>
+                            <a href="/categories/electronic" class="dropdown-item">
+                                Điện tử
+                            </a>
+                            <a href="/categories/transport" class="dropdown-item">
+                                Phương tiện
+                            </a>
+                            <a href="/categories/book" class="dropdown-item">
+                                Sách
+                            </a>
+                            <a href="/categories/toolkit" class="dropdown-item">
+                                Phụ kiện - thiết bị số
+                            </a>
+                            <a href="/categories/food" class="dropdown-item">
+                                Thực phẩm
+                            </a>
+                            <a href="/categories/lifestyle" class="dropdown-item">
+                                Nhà cửa - đời sống
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cart" onclick="scrollToDownload()">
+                            <i class="material-icons">shopping_cart</i> Giỏ hàng
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/history" onclick="scrollToDownload()">
+                            <i class="material-icons">history
+                            </i> Lịch sử
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/profile" onclick="scrollToDownload()">
+                            <i class="material-icons">person_pin
+                            </i> Trang cá nhân
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/" onclick="scrollToDownload()">
+                            <i class="material-icons">exit_to_app</i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <form class="form-inline ml-auto">
+                            <div class="form-group no-border">
+                                <input type="text" class="form-control" placeholder="Tìm kiếm">
+                            </div>
+                            <button type="submit" class="btn btn-white btn-just-icon btn-round">
+                                <i class="material-icons">search</i>
+                            </button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <br /> <br />
+    <br /> <br />
+    <div class="ui container">
+        <div class="title">
+            <h2>Mặt hàng hiện có</h2>
+        </div>
+        <div class="ui link cards centered grid">
+            {{#each carts}}
+            <div class="card">
+                <div class="image">
+                    <img src={{this.image}}>
+                </div>
+                <div class="content">
+                    <div class="header">{{this.name}}</div>
+                    <div class="meta">
+                        <a>{{this.type}}</a>
+                    </div>
+                    <div class="description">
+                        {{this.price}}
+                    </div>
+                </div>
+                <div class="extra content">
+
+                    <span>
+                        <i class="like icon"></i>
+                        Add to cart
+                    </span>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+    </div>
+
+    <!--   Core JS Files   -->
+    <script>
+        $(document).ready(function () {
+            //init DateTimePickers
+            materialKit.initFormExtendedDatetimepickers();
+
+            // Sliders Init
+            materialKit.initSliders();
+        });
+
+
+        function scrollToDownload() {
+            if ($('.section-download').length != 0) {
+                $("html, body").animate({
+                    scrollTop: $('.section-download').offset().top
+                }, 1000);
+            }
+        }
+
+    </script>
+</body>

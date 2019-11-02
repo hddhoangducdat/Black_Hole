@@ -1,0 +1,151 @@
+<body class="profile-page sidebar-collapse">
+    <nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100"
+        id="sectionsNav">
+        <div class="container">
+            <div class="navbar-translate">
+                <a class="navbar-brand" href="/home">
+                    BLACK HOLE </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse">
+
+                <ul class="navbar-nav ml-auto">
+
+                    <li class="dropdown nav-item">
+                        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                            <i class="material-icons">dashboard</i>Mặt hàng
+                        </a>
+                        <div class="dropdown-menu dropdown-with-icons">
+                            <a href="/categories/sport" class="dropdown-item">
+                                Thể thao
+                            </a>
+                            <a href="/categories/fashion" class="dropdown-item">
+                                Thời trang
+                            </a>
+                            <a href="/categories/electronic" class="dropdown-item">
+                                Điện tử
+                            </a>
+                            <a href="/categories/transport" class="dropdown-item">
+                                Phương tiện
+                            </a>
+                            <a href="/categories/book" class="dropdown-item">
+                                Sách
+                            </a>
+                            <a href="/categories/toolkit" class="dropdown-item">
+                                Phụ kiện - thiết bị số
+                            </a>
+                            <a href="/categories/food" class="dropdown-item">
+                                Thực phẩm
+                            </a>
+                            <a href="/categories/lifestyle" class="dropdown-item">
+                                Nhà cửa - đời sống
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cart" onclick="scrollToDownload()">
+                            <i class="material-icons">shopping_cart</i> Giỏ hàng
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/history" onclick="scrollToDownload()">
+                            <i class="material-icons">history
+                            </i> Lịch sử
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="scrollToDownload()">
+                            <i class="material-icons">person_pin
+                            </i> Trang cá nhân
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/" onclick="scrollToDownload()">
+                            <i class="material-icons">exit_to_app</i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <form class="form-inline ml-auto">
+                            <div class="form-group no-border">
+                                <input type="text" class="form-control" placeholder="Tìm kiếm">
+                            </div>
+                            <button type="submit" class="btn btn-white btn-just-icon btn-round">
+                                <i class="material-icons">search</i>
+                            </button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="page-header header-filter" data-parallax="true" style="background-image: url('img/city-profile.jpg');">
+    </div>
+    <div class="main main-raised">
+        <div class="profile-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 ml-auto mr-auto">
+                        <div class="profile">
+                            <div class="avatar">
+                                <img src={{profile.picture}} alt="Circle Image"
+                                    class="img-raised rounded-circle img-fluid">
+                            </div>
+                            <div class="name">
+                                <h2 class="title">{{profile.name}}</h2>
+                                <h4>{{profile.phone}}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="description text-center">
+                    <p>Giới tính: {{profile.sex}}</p>
+                    <p>Địa chỉ: {{profile.address}}</p>
+                    <p>Email: {{profile.email}}</p>
+                </div>
+                <br /> <br />
+                <div class="row">
+
+                    <div class="col-md-6 ml-auto mr-auto">
+                        <h3>
+                            THAY ĐỔI THÔNG TIN CÁ NHÂN
+                        </h3>
+                        <div class="ui form">
+                            <div class="two fields">
+                                <div class="field">
+                                    <label>Họ và tên</label>
+                                    <input type="text" placeholder="Họ và tên">
+                                </div>
+                                <div class="field">
+                                    <label>Địa chỉ</label>
+                                    <input type="text" placeholder="Địa chỉ">
+                                </div>
+                            </div>
+                            <div class="three fields">
+                                <div class="field">
+                                    <label>Giới tính</label>
+                                    <input type="text" placeholder="Giới tính">
+                                </div>
+                                <div class="field">
+                                    <label>Số điện thoại</label>
+                                    <input type="text" placeholder="Số điện thoại">
+                                </div>
+                                <div class="field">
+                                    <label>Email</label>
+                                    <input type="text" placeholder="Email">
+                                </div>
+                            </div>
+                            <button class="ui button primary">Thay đổi</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br /> <br />
+    </div>
+</body>
