@@ -89,24 +89,26 @@
         <div class="ui grid">
 
             <div class="four wide column">
-                <img class="ui fluid image" src={{product.image}}>
+                <img class="ui fluid image" src={{product.Images}}>
             </div>
             <div class="twelve wide column">
                 <div class="ui container">
                     <h1 class="title">
-                        {{product.name}}
+                        {{product.Name}}
                     </h1>
                     <div class="meta">
-                        {{product.type}}
-
+                        <a href={{product.CategoryUrl}}>{{product.Category}}</a>
+                    </div>
+                    <div class="meta">
+                        Nhà sản xuất: {{product.CreatedBy}}
                     </div>
                     <h2 class="meta">
                         <font color="red">
-                            {{product.price}}
+                            {{product.Price}}
                         </font>
                     </h2>
                     <div class="description">
-                        {{product.description}}
+                        {{product.Description}}
                     </div>
                     <br />
                     <div class="ui grid">
@@ -116,7 +118,7 @@
                                     <i class="plus  icon tiny"></i>
                                 </button>
                                 <div class="ui button blue tiny">
-                                    {{product.number}}
+                                    0
                                 </div>
                                 <button class="ui button tiny">
                                     <i class="minus icon tiny"></i>
@@ -135,4 +137,6 @@
 
         </div>
     </div>
+
+
 </body>
