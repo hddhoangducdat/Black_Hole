@@ -13,7 +13,7 @@
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "hbs": "^4.0.6",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "mongoose": "^5.7.10",
     "morgan": "^1.9.1",
     "qs": "^6.9.1",
